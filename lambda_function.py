@@ -131,7 +131,95 @@ def lambda_handler(event, context):
 # Teste da função lambda (apenas para desenvolvimento local)
 if __name__ == "__main__":
     test_event = {
-        "text": "Hello! This is a simple test of our text-to-speech conversion system.",
+        "text": """The transmission began as a whisper, faint and broken, bouncing across the void of space. No one on the Odyssey was supposed to be awake when it arrived, yet something—or someone—adjusted the comms array just enough for the signal to slip through.
+
+        Lieutenant Mara Vey rubbed her eyes as the console flickered. The hum of the ship’s life-support systems was the only constant sound in the otherwise silent monitoring bay. She leaned forward, watching as fragmented audio pulsed across the screen.
+
+        “—help us—coordinates—”
+
+        Mara froze. Every distress call received in deep space was routed through the central relay station near Titan. The Odyssey, patrolling near the edges of the Perseus Expanse, shouldn’t have been able to intercept it.
+
+        She replayed the fragment. Same broken words. Same static.
+
+        Her hand hovered over the ship’s log recorder. Do I wake the captain? Protocol demanded it, but curiosity rooted her in place. Mara had grown tired of routine patrols, endless scans of empty sectors. This… this was different.
+
+        She typed the coordinates into the navigation system. A red warning blinked instantly: RESTRICTED SECTOR – UNCHARTED.
+
+        That made her blood run cold. The Expanse was known for its anomalies: gravitational rifts, silent derelicts, stories told by exhausted crews after too many months in isolation.
+
+        Still, the voice in the transmission sounded human. Desperate.
+
+        Mara whispered to herself, “Just a quick look. 
+        Three hours later, the Odyssey drifted through a debris field. Shattered hulls floated silently, their insignias unrecognizable. Some ships looked decades old, others impossibly ancient, their designs alien and jagged, like bones picked clean.
+
+        The signal grew stronger.
+
+        “—anyone hearing this—please respond—”
+
+        This time, the voice was clearer. A woman’s voice, trembling with fear.
+
+        Mara opened a channel. “This is Lieutenant Vey of the U.N.S. Odyssey. Identify yourself.”
+
+        Static swallowed her words. Then, after a long pause:
+
+        “Odyssey… you shouldn’t have come.”
+
+        Before Mara could reply, proximity alarms screamed. Dozens of small objects detached from the wreckage, moving with unsettling precision. At first glance they looked like drones, but their forms shifted as if liquid metal clung to an invisible skeleton.
+
+        They swarmed toward the Odyssey.
+
+        “Defense grid online,” the ship’s AI announced calmly. Turrets emerged, blasting arcs of plasma into the dark. But each impact only scattered fragments, which reassembled in moments.
+
+        Mara’s stomach knotted. “Not drones. Organisms.”
+
+        The voice returned, louder now, cutting through the chaos:
+
+        “You can’t fight them. Leave before they notice you.”
+
+        Mara yelled at the comm. “Who are you? Where are you transmitting from?”
+
+        Her radar pinged a location deep within the wreckage—a massive ship, its hull fractured yet still intact enough to dwarf the Odyssey. Symbols unlike any human language crawled across its surface, glowing faintly.
+
+        The signal originated from inside.
+
+        Against every regulation drilled into her, Mara locked the Odyssey onto the derelict’s docking bay. The AI protested, but she overrode the system.
+
+        When the airlock opened, stale air and the faint smell of rust greeted her. She stepped inside, flashlight cutting through the dark. Shadows of alien architecture stretched across the walls, twisted and unsettling, as if grown rather than built.
+
+        “Hello?” she called.
+
+        Her voice echoed endlessly.
+
+        Then—movement. A figure stumbled from the shadows. Human. Pale. Wearing a torn flight suit with an old Earth insignia.
+
+        Mara’s heart raced. “Impossible. That crest was retired a century ago.”
+
+        The woman lifted her head. Her eyes shimmered with unnatural light. “You shouldn’t have come,” she repeated, voice shaking. “They’re learning. Every rescue attempt makes them stronger.”
+
+        Mara stepped closer. “Who are they?”
+
+        The woman opened her mouth to answer, but a low vibration shook the entire derelict. Metal groaned as if the ship itself was alive. From the walls, liquid shadows began to drip, pulling themselves into humanoid forms.
+
+        The woman grabbed Mara’s wrist with a strength that felt inhuman. “Run.”
+
+        Mara barely made it back through the airlock as the derelict shuddered violently. The Odyssey’s AI screamed alerts: “Unidentified lifeforms detected. Hull breach imminent.”
+
+        The swarm followed, slamming against the outer bulkhead like a rising tide.
+
+        Mara sealed the hatch, lungs burning. “Get us out of here!”
+
+        Engines roared. The Odyssey pulled free, but fragments of the swarm clung to the hull, their shapes already mimicking the ship’s armor.
+
+        On the comm, the woman’s voice whispered one final time:
+
+        “You brought them with you.”
+
+        The stars stretched into streaks as the Odyssey jumped to faster-than-light. Mara collapsed into her chair, trembling. The console flickered with new messages—dozens of them—each identical to the one she’d first intercepted.
+
+        “Help us. Coordinates—”
+
+        Except now, every transmission carried her own voice.
+        """,
         "voice_id": "Joanna",  # English voice
         "output_format": "mp3",
         "speed": "medium"
