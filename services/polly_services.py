@@ -130,7 +130,9 @@ class TTSPollyService:
             file_size_mb = file_size / (1024 * 1024)
             
             # Estimar duração do áudio (aproximada)
-            estimated_duration = len(text) / 150  # ~150 caracteres por minuto
+            # Velocidade média de fala: ~150-180 caracteres por segundo
+            chars_per_second = 165  # Velocidade média
+            estimated_duration = len(text) / chars_per_second
             
             result = {
                 'success': True,
@@ -139,7 +141,7 @@ class TTSPollyService:
                 'file_size_bytes': file_size,
                 'file_size_mb': round(file_size_mb, 3),
                 'processing_time': round(processing_time, 2),
-                'duration': round(estimated_duration * 60, 2),  # em segundos
+                'duration': round(estimated_duration, 2),  # em segundos
                 'voice_id': voice_id,
                 'output_format': output_format,
                 'engine': synthesis_params.get('Engine', 'standard'),
