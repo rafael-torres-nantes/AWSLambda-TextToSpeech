@@ -29,43 +29,21 @@ def lambda_handler(event, context):
     print(f'[DEBUG] Temporary directory configured: {TMP_DIR}')
     
     try:
-        
+
         # 3 - Validar entrada obrigatória
-        if 'text' not in event:
-            raise ValueError("Field 'text' is required")
+        text = event.get('text', None)
+        if not text:
+            raise ValueError("[ERROR] 'text' parameter is required")
+        print(f'[DEBUG] Text for conversion (length: {len(text)} characters): {text[:100]}...')        
         
-        text = event.get('text')
-        if not text or len(text.strip()) == 0:
-            raise ValueError("Text cannot be empty")
-        
-        print(f'[DEBUG] Text for conversion (length: {len(text)} characters): {text[:100]}...')
-        
-        # 4 - Obter parâmetros opcionais com valores padrão
-        voice_id = event.get('voice_id', 'Joanna')
-        output_format = event.get('output_format', 'mp3')
-        speed = event.get('speed', 'medium')
-        use_neural = event.get('use_neural', True)
-        
-        print(f'[DEBUG] TTS parameters configured:')
-        print(f'        - Voice ID: {voice_id}')
-        print(f'        - Format: {output_format}')
-        print(f'        - Speed: {speed}')
-        print(f'        - Neural Engine: {use_neural}')
-        
-        # 5 - Instanciar serviço TTS com diretório temporário personalizado
+        # 4 - Instanciar serviço TTS com diretório temporário personalizado
         tts_service = TTSPollyService(output_dir=TMP_DIR)
         print(f'[DEBUG] TTS service successfully initialized')
         
-        # 6 - Converter texto para fala
-        audio_result = tts_service.text_to_speech(
-            text=text,
-            voice_id=voice_id,
-            output_format=output_format,
-            speed=speed,
-            use_neural=use_neural
-        )
+        # 5 - Converter texto para fala
+        audio_result = tts_service.text_to_speech(text=text)
         
-        # 7 - Verificar se a conversão foi bem-sucedida
+        # 6 - Verificar se a conversão foi bem-sucedida
         if not audio_result['success']:
             raise Exception(f"TTS conversion error: {audio_result['error']}")
         
@@ -94,7 +72,6 @@ def lambda_handler(event, context):
             'success': True,
             'message': 'Text successfully converted to speech',
             'audio_data': audio_base64,
-            'voice_id': voice_id,
             'file_size_mb': file_size_mb,
             'duration': audio_result.get('duration', 0),
             'processing_time': audio_result.get('processing_time', 0)
